@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "build": {
+    "builder": "@railway/cli",
+    "config": {
+      "build": "npm install",
+      "start": "npm start"
+    }
+  },
+  "env": {
+    "NODE_ENV": "production"
+  }
+}

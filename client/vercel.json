@@ -1,0 +1,22 @@
+{
+  "version": 2,
+  "name": "gann-campaign-analyzer",
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "build"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/index.html"
+    }
+  ],
+  "env": {
+    "REACT_APP_API_URL": "https://gann-analyzer-backend.up.railway.app"
+  }
+}

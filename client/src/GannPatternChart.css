@@ -1,0 +1,159 @@
+/* Gann Pattern Chart Styles - Enhanced */
+.gann-pattern-chart {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  margin-top: 20px;
+  border: 1px solid rgba(79, 172, 254, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  position: relative;
+  min-height: 280px;
+}
+
+.gann-pattern-chart::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #4facfe, #00f2fe);
+  border-radius: 16px 16px 0 0;
+}
+
+.pattern-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.pattern-header h5 {
+  margin: 0;
+  font-size: 1em;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.current-indicator {
+  background: #4facfe;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.pattern-sections {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pattern-section {
+  padding: 16px 12px;
+  border-radius: 12px;
+  text-align: center;
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  background: #f8f9fa;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.pattern-section:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.pattern-section.active {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.section-id {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #2c3e50;
+}
+
+.section-name {
+  font-size: 0.8em;
+  font-weight: 600;
+  margin-bottom: 2px;
+  color: #2c3e50;
+}
+
+.section-description {
+  font-size: 0.7em;
+  color: #666;
+  line-height: 1.2;
+}
+
+.current-dot {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  z-index: 10;
+}
+
+.dot {
+  width: 16px;
+  height: 16px;
+  background: #ff6b6b;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.3);
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.8;
+  }
+}
+
+.pattern-flow {
+  text-align: center;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.flow-arrow {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #4facfe;
+  font-size: 0.9em;
+  letter-spacing: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .pattern-sections {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .pattern-section {
+    padding: 8px 6px;
+  }
+  
+  .section-id {
+    font-size: 1em;
+  }
+  
+  .section-name {
+    font-size: 0.75em;
+  }
+  
+  .section-description {
+    font-size: 0.65em;
+  }
+}
