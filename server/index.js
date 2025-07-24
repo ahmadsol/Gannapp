@@ -1,6 +1,6 @@
 // --- Gann Modular Analysis ---
 const gann = require('./gann');
-// Gann Analysis API for frontend dashboard
+// Gann Analysis API for frontend dashboard (must be after app is initialized)
 app.get('/api/gann/analysis', async (req, res) => {
   // For demo: mock price/volume data. Replace with real data source as needed.
   const priceData = Array.from({length: 50}, (_, i) => ({
