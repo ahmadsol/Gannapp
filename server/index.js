@@ -1,3 +1,40 @@
+// --- Gann Modular Analysis ---
+const gann = require('./gann');
+// Gann Analysis API for frontend dashboard
+app.get('/api/gann/analysis', async (req, res) => {
+  // For demo: mock price/volume data. Replace with real data source as needed.
+  const priceData = Array.from({length: 50}, (_, i) => ({
+    open: 100 + i + Math.random(),
+    high: 105 + i + Math.random(),
+    low: 95 + i - Math.random(),
+    close: 100 + i + Math.random(),
+    time: Date.now() - (50 - i) * 3600 * 1000
+  }));
+  const volumeData = Array.from({length: 50}, () => 1000 + Math.random() * 100);
+
+  // Run modular Gann analysis
+  const sectionResult = gann.section.detectMarketSection(priceData, volumeData);
+  const supportResistance = gann.supportResistance.calculateSupportResistance(priceData);
+  const volumeResult = gann.volume.analyzeVolume(priceData, volumeData);
+  const patterns = gann.patterns.detectPatterns(priceData);
+  const cycles = gann.cycles.detectCycles(priceData);
+  const risk = gann.risk.calculateRisk(priceData, volumeData);
+  const logs = [
+    { timestamp: new Date().toISOString(), type: 'info', message: 'Gann analysis completed.' }
+  ];
+
+  // Compose response for frontend
+  res.json({
+    section: sectionResult.section,
+    stage: sectionResult.stage,
+    supportResistance,
+    volume: volumeResult,
+    patterns,
+    cycles,
+    risk,
+    logs
+  });
+});
 const express = require('express');
 const cors = require('cors');
 const fetch = (...args) => import('node-fetch').then(({default: fetch}) => fetch(...args));
