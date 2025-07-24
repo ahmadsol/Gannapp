@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchGannAnalysis } from '../api/gannApi';
-import { GannAnalysisResult } from '../src/types/gannTypes';
+import { GannAnalysisResult } from '../types/gannTypes';
 import ChartPanel from './ChartPanel';
 import MarketSectionPanel from './MarketSectionPanel';
 import VolumePanel from './VolumePanel';
