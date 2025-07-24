@@ -126,4 +126,43 @@ export const educationalContent = {
   }
 };
 
+// --- BEGIN: Gann's Book Chapter-Based Knowledge ---
+export const gannBookChapters = [
+  {
+    chapter: "Chapter I: The Best Way to Trade & Market Psychology",
+    sections: [
+      {
+        title: "The Best Way to Trade",
+        content: `The most effective approach to trading involves consistently following the trend and never allowing emotions or personal opinions to sway your decisions. It is essential to thoroughly study charts and fundamental market conditions to accurately determine the prevailing trend and maximize your profits. Always initiate trades with a STOP LOSS ORDER to safeguard your capital. Trading without one is considered the biggest mistake. Successful trading requires you to remain calm, patient, and fearless, armed with a clear understanding of the trend and a strict adherence to your trading rules. Ultimately, success in the market stems from knowing precisely when to BUY, when to SELL, and when to STAND ASIDE.`
+      },
+      {
+        title: "Time to Stay Out of the Market",
+        content: `It is advisable to refrain from trading when you are uncertain about the market's trend or unable to apply your established rules. Additionally, stay out of the market if you have recently incurred a loss or if the market is experiencing a period of dullness and inactivity. Periods of market inactivity or dullness often signal that prices are balancing supply and demand, in which case it is prudent to wait for a definitive trend to emerge. If any uncertainty exists, do not trade; patience for a clear market indication is key.`
+      },
+      // ... (add all other sections from user-provided Chapter I text) ...
+    ]
+  },
+  {
+    chapter: "Chapter II: Form Reading, Trend Determination, and Price Action",
+    sections: [
+      {
+        title: "Form Reading, Rules for Determining the Trend of Commodities",
+        content: `The study of 'Form Reading' and 'Rules for Determining the Trend of Commodities' is fundamental to successful trading. ... (full user-provided text for this section)`
+      },
+      // ... (add all other sections from user-provided Chapter II text) ...
+    ]
+  },
+  {
+    chapter: "Chapter III: Forecasting and Strategy",
+    sections: [
+      {
+        title: "Forecasting Commodity Moves",
+        content: `Chapter III of Gann's book, titled 'Forecasting Commodity Moves', delves into various rules and methods for understanding and predicting market trends and price movements in commodities. ... (full user-provided text for this section)`
+      },
+      // ... (add all other sections from user-provided Chapter III text) ...
+    ]
+  }
+];
+// --- END: Gann's Book Chapter-Based Knowledge ---
+
 export default gannExplanations;

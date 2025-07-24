@@ -52,10 +52,29 @@ const cache = (duration) => {
 };
 
 app.use(cors({
-  origin: process.env.NODE_ENV === 'production'
-    ? ['https://your-gann-analyzer.vercel.app', 'https://*.vercel.app']
-    : ['http://localhost:3000', 'http://localhost:3001', 'http://localhost:3002']
+  origin: true,
+  credentials: true
 }));
+
+// Additional CORS headers for HTTPS to HTTP requests
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});
+
+// Handle OPTIONS preflight requests
+app.use((req, res, next) => {
+  if (req.method === 'OPTIONS') {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+    return res.sendStatus(200);
+  }
+  next();
+});
+
 app.use(express.json());
 
 app.get('/', (req, res) => {

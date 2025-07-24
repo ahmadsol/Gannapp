@@ -10,6 +10,7 @@ import BitstampChart from './BitstampChart';
 import './GannPatternChart.css';
 import config from './config';
 import BitstampWebSocketManager from './BitstampWebSocketManager';
+// REMOVE: import GannRulesSection from './GannRulesSection';
 
 // Utility function to format prices without trailing zeros
 const formatPrice = (price) => {
@@ -476,6 +477,7 @@ function App() {
           </div>
         </div>
         <nav className="tabs">
+          {/* REMOVE: Gann’s Trading Rules tab */}
           <button
             className={activeTab === 'campaignStructure' ? 'active' : ''}
             onClick={() => setActiveTab('campaignStructure')}
@@ -505,6 +507,8 @@ function App() {
 
       <main className="App-main">
         {error && <p style={{ color: 'red', padding: '10px' }}>{error}</p>}
+
+        {/* REMOVE: Gann’s Trading Rules section rendering */}
 
         {activeTab === 'campaignStructure' && (
           <div className="tab-content">
